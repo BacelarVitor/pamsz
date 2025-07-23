@@ -103,7 +103,7 @@
 
     const interval = setInterval(() => {
         const item = allItems[count];
-        const x = Math.random() * 85;
+        const x = Math.random() * 75;
         const topOffset = Math.random() * 100;
 
         drops = [
@@ -113,9 +113,9 @@
 
         count++;
         if (count >= total) {
-        clearInterval(interval);
-        raining = false;
-        setTimeout(() => (wiggle = true), 500);
+            clearInterval(interval);
+            raining = false;
+            setTmeout(() => (wiggle = true), 500);
         }
     }, 1500); 
   }
