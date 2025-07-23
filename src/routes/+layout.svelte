@@ -1,4 +1,5 @@
 <script>
+    import { base } from "$app/paths";
     import '../global.css'
     import '@picocss/pico/css/pico.css';
 </script>
