@@ -8,6 +8,16 @@
   let drops = [];
   let wiggle = true;
   let raining = false;
+  let dryMode = false; // 🌵 
+
+  const waterEmojis = ["💧", "🌊", "🌧️", "☔", "🫧", "⛲", "🚿"]; // 💧
+  const dryPhrases = [
+    "Fui seco, mas estou me regando agora 💧",
+    "Tudo aquilo que se rega, cresce 🌱💦",
+    "Era só sede emocional mesmo 😅☔",
+    "Desculpa, estou molhado de saudade 🌊",
+    "Agora estou pingando carinho 💧❤️"
+  ];
 
   const phrases = [
     "Você é tão linda! 💖",
@@ -93,10 +103,15 @@
     raining = true;
     wiggle = false;
     drops = [];
-
     const allItems = shuffle([
-        ...phrases.map(p => ({ type: 'text', content: p })),
-        ...mediaItems.map(({ type, url }) => ({ type, content: url }))
+    ...phrases.map(p => ({
+        type: 'text',
+        content: dryMode ? `${p} ${waterEmojis[Math.floor(Math.random() * waterEmojis.length)]}` : p // 💧
+    })),
+    ...(dryMode
+        ? [{ type: 'text', content: dryPhrases[Math.floor(Math.random() * dryPhrases.length)] }] // 🌵 gracinha extra
+        : []),
+    ...mediaItems.map(({ type, url }) => ({ type, content: url }))
     ]);
     let count = 0;
     const total = allItems.length;
@@ -245,6 +260,10 @@
   <button class={wiggle ? 'wiggle' : ''} on:click={startRain}>
     Clique para um carinho ✨
   </button>
+  <label style="margin-top: 1rem;">
+    <input type="checkbox" role="switch" bind:checked={dryMode}>
+    🌵 Modo Seco
+  </label>
 
   {#each drops as drop (drop.id)}
     <div class="drop" style="left: {drop.x}vw; top: -{drop.topOffset}px;">
