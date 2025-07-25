@@ -10,7 +10,7 @@
   let raining = false;
   let dryMode = false; // 🌵 
 
-  const waterEmojis = ["💧", "🌊", "🌧️", "☔", "🫧", "⛲", "🚿"]; // 💧
+  const waterEmojis = ["💧", "🌊", "🌧️", "☔", "🫧", "💦", "🚿"]; 
   const dryPhrases = [
     "Fui seco, mas estou me regando agora 💧",
     "Tudo aquilo que se rega, cresce 🌱💦",
@@ -40,20 +40,6 @@
     "💐💐💐 Um buquê de carinho só seu 💐💐💐",
     "Sempre que quiser, estarei aqui 🤍",
     "Sempre que precisar, me chama pra tc, gata 😽💌"
-  ];
-
-  const imageUrls = [
-    "https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg",
-    "https://s3.amazonaws.com/freecodecamp/running-cats.jpg",
-    "https://i.imgur.com/8ZjboA9.jpeg",
-    "https://i.imgur.com/RpBIba3.jpeg",
-    "https://i.imgur.com/rSy37ax.jpeg",
-    "https://i.imgur.com/IJ8znCF.jpeg",
-    "https://i.imgur.com/E6eoW1k.jpeg",
-    "https://i.imgur.com/aFQQVK4.jpeg",
-    "https://i.imgur.com/M35fen0.jpeg",
-    "https://i.imgur.com/CK8Hs1J.mp4",
-    "https://i.imgur.com/FvxWMVi.mp4",
   ];
 
   const mediaItems = [
