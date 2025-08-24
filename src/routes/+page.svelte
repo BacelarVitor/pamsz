@@ -2,6 +2,9 @@
 // @ts-nocheck
 
   import { onMount } from 'svelte';
+  import { images } from '$lib/assets';
+
+  console.log();
   /**
 	 * @type {any[]}
 	 */
@@ -54,6 +57,7 @@
     { type: 'image', url: 'https://i.imgur.com/M35fen0.jpeg' },
     { type: 'video', url: 'https://i.imgur.com/CK8Hs1J.mp4' },
     { type: 'video', url: 'https://i.imgur.com/FvxWMVi.mp4' },
+    ...Object.values(images).map(x => ({ type: 'image', url: x})),
   ];
 
   const preloadMedia = (items) => {
@@ -142,9 +146,9 @@
   }
 
   .wiggle {
-    animation: wiggle 0.6s ease-in-out infinite;
-    animation-delay: 3s;
-    animation-iteration-count: infinite;
+    animation: wiggle 0.6s ease-in-out ;
+    animation-delay: 2s;
+    animation-iteration-count: once;
   }
 
   @keyframes wiggle {
@@ -186,8 +190,8 @@
   }
 
   .drop img {
-    width: 30vw;
-    max-width: 120px;
+    width: 50vw;
+    max-width: 240px;
     height: auto;
     border-radius: 12px;
   }
@@ -213,7 +217,7 @@
 
   @media (max-width: 480px) {
     .drop img {
-      width: 100px;
+      max-width: 240px;
     }
 
     .drop-video {
