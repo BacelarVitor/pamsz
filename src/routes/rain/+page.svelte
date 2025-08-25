@@ -4,7 +4,6 @@
   import { onMount } from 'svelte';
   import { images } from '$lib/assets';
 
-  console.log();
   /**
 	 * @type {any[]}
 	 */
@@ -12,6 +11,7 @@
   let wiggle = true;
   let raining = false;
   let dryMode = false; // 🌵 
+  let showSpotify = false;
 
   const waterEmojis = ["💧", "🌊", "🌧️", "☔", "🫧", "💦", "🚿"]; 
   const dryPhrases = [
@@ -250,10 +250,30 @@
   <button class={wiggle ? 'wiggle' : ''} on:click={startRain}>
     Clique para um carinho ✨
   </button>
-  <label style="margin-top: 1rem;">
-    <input type="checkbox" role="switch" bind:checked={dryMode}>
-    🌵 Modo Seco
-  </label>
+  <div class="grid" style="margin-top: 1rem;">
+    <label>
+      <input type="checkbox" role="switch" bind:checked={dryMode}>
+      🌵 Modo Seco
+    </label> 
+    <label style="margin-left: 1rem;">
+      <input type="checkbox" role="switch" bind:checked={showSpotify}>
+      🎧 Show Spotify
+    </label> 
+  </div>
+
+  {#if showSpotify}
+    <iframe 
+      title="sua playlist"
+      data-testid="embed-iframe" 
+      style="border-radius:12px" 
+      src="https://open.spotify.com/embed/playlist/1NazxhWPgQUdboYHGzuBSI?utm_source=generator" 
+      width="100%" 
+      height="152" 
+      frameBorder="0" 
+      allowfullscreen="" 
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+      loading="lazy"></iframe>
+  {/if}
 
   {#each drops as drop (drop.id)}
     <div class="drop" style="left: {drop.x}vw; top: -{drop.topOffset}px;">
