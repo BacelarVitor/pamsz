@@ -1,5 +1,6 @@
 <script>
   import "../global.css";
+  import { page } from "$app/stores";
 
   // Tabs do app
   const tabs = [
