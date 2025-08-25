@@ -2,6 +2,7 @@
   import { images } from '$lib/assets';
   // list
   const photos = Object.values(images);
+  
 </script>
 
 <div class="mural">
