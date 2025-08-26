@@ -265,7 +265,7 @@
     <iframe 
       title="sua playlist"
       data-testid="embed-iframe" 
-      style="border-radius:12px; padding-top: 1rem;" 
+      style="border-radius:12px; margin-top: 1rem;" 
       src="https://open.spotify.com/embed/playlist/1NazxhWPgQUdboYHGzuBSI?utm_source=generator" 
       width="100%" 
       height="152" 
